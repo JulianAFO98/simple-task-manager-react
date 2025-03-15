@@ -1,21 +1,20 @@
-import { useContext } from "react"
-import { TaskContext } from "../context/task"
-import { ACTIONS } from "../const";
 
+/////////////////////////////////
+// INDEX IS NOT A GOOD PRACTICE//
+// CHANGE FOR ID IF POSSIBLE   //
+/////////////////////////////////
+
+import { useTasks } from "../hooks/useTasks";
 
 export function TaskContainer() {
-    const { tasks, dispatch } = useContext(TaskContext);
 
-    const handleDelete = (index) => {
-        dispatch({ type: ACTIONS.REMOVE_TASK, payload: index })
-    }
-
+    const { tasks, handleDelete } = useTasks();
     return (
         <section className="task-container">
             {
                 tasks && (tasks.map((task, index) => {
                     return (
-                        <div className="task" key={index}>
+                        <div className="task" key={index}> {/*HERE*/}
                             <div>
                                 <button onClick={() => handleDelete(index)}>x</button>
                             </div>

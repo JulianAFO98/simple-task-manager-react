@@ -1,17 +1,13 @@
 import { ACTIONS } from "../const";
 import { TaskContext } from "../context/task";
+import { useShowInfo } from "../hooks/useShowInfo";
 import { AddTask } from "./AddTask"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export function Menu() {
 
-
+    const { showInfo, changeState, setShowInfo } = useShowInfo();
     const { dispatch } = useContext(TaskContext);
-    const [showInfo, setShowInfo] = useState(false);
-
-    const changeState = () => {
-        setShowInfo(!showInfo);
-    }
 
     const deleteAllTask = () => {
         dispatch({ type: ACTIONS.RESET_TASKS });
