@@ -14,7 +14,7 @@ export function TaskContainer() {
             {
                 tasks && (tasks.map((task, index) => {
                     return (
-                        <div className="task" key={index}> {/*HERE*/}
+                        <div className="task" key={index} data-testid="task-item"> {/*HERE*/}
                             <div>
                                 <button onClick={() => handleDelete(index)}>x</button>
                             </div>

@@ -23,7 +23,7 @@ export function AddTask({ setShowInfo }) {
             <button className="close-btn" onClick={() => setShowInfo(false)}>X</button>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="task-name">Task name:</label>
-                <input type="text" id="task-name" name="title" />
+                <input type="text" id="task-name" name="title" data-testid="task-input" />
                 <label htmlFor="task-select">Task type:</label>
                 <select id="task-select" name="type">
                     <option value="shopping">Shopping</option>
@@ -34,7 +34,7 @@ export function AddTask({ setShowInfo }) {
                 </select>
                 <label htmlFor="task-description">Task description:</label>
                 <textarea id="task-description" name="description"></textarea>
-                <button className="form-button" type="submit">Guardar</button>
+                <button className="form-button" type="submit" data-testid="submit-btn">Guardar</button>
             </form>
         </div>
     )

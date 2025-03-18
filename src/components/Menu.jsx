@@ -17,7 +17,7 @@ export function Menu() {
         <>
 
             <nav>
-                <button onClick={changeState}>Add task</button>
+                <button onClick={changeState} data-testid="add-task-btn">Add task</button>
                 <button onClick={deleteAllTask}>Reset tasks</button>
             </nav>
 
